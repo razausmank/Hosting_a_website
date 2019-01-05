@@ -1,0 +1,71 @@
+body {
+   
+	width:9.5cm;
+	height: 21cm;
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body h2
+{
+	text-align: center;
+}
+.button , .button2
+{
+	display:none ;
+}
+
+.sheet_values
+{
+	float:right;
+}
+#total , #total2
+{
+	font-size: 20px; font-weight: bold
+}
+#total 
+{
+	margin:0px;
+	padding:0px;
+}
+hr
+{
+	border-top: dashed 1px;
+		margin-top:0em	;
+}
+
+.top_values
+{
+	 font-weight: bold;
+}
+
+#underline
+{
+	  text-decoration: underline;
+}
+
+#Category
+{
+	padding-left:1em;
+	padding-right:4.2em;
+}
+#Category_type
+{
+	padding-left:1em;
+	padding-right:1em;
+}
+
+#Area
+{
+	padding-left:1em;
+}
+
+#Plot_type
+{
+	padding-left:1em;
+}
+
+#Floor_type
+{
+	padding-left:1em;
+}

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='printpage.css'  /> 
+<link rel='stylesheet' type='text/css' href='print.css'  media="print" />  
+</head>
+<body>
+	<div id="report">
+	 <h2 id="heading">Estimates of &nbsp</h2>
+	
+		<label class="top_values" id="underline">Category</label>
+		<label id="Category" class="top_values"></label>
+		
+		
+		<label class="top_values" id="underline">Plot Type</label>
+		<label id="Plot_type" class="top_values"></label>
+		<br>
+		<br>
+		
+		<label class="top_values" id="underline">Category Type</label>
+		<label class="top_values" id="Category_type"></label>
+		
+		
+		<label class="top_values" id="underline">Floor Type</label>
+		<label id="Floor_type" class="top_values"></label>
+		<br>
+		<br>
+		<label class="top_values" id="underline">Area SQ. Yard / SQ. Ft.</label>
+		<label class="top_values" id="Area" ></label>
+		<br>
+
+	<br / >
+		<span>DC Value</span>
+		<span id="DC_value" class="sheet_values"></span>
+	<hr />
+	
+	 
+		<span>Stamp Duty</span>
+		<span id="Stamp_duty" class="sheet_values"></span>
+	<hr />
+	
+	 
+		<span>Duplicate</span>
+		<span id="Duplicate" class="sheet_values"></span>
+	<hr id="remove1" />
+	
+	 
+		<span>Registration Fees</span>
+		<span id="Registration_Fees" class="sheet_values"></span>
+	<hr id="remove2"/>
+	
+	 
+		<span>Town Tax</span>
+		<span id="Town_Tax" class="sheet_values"></span>
+	<hr id="remove3"/>
+	
+	 
+		<span>CVT</span>
+		<span id="CVT" class="sheet_values"></span>
+	<hr id="remove4"/>
+	
+	 
+		<span>FBR Value</span>
+		<span id="FBR_value" class="sheet_values"></span>
+	<hr id="remove5"/>
+	
+	 
+		<span>Difference Value</span>
+		<span id="Difference_value" class="sheet_values"></span>
+	<hr id="remove6"/>
+	
+	 
+		<span>W Tax Fees</span>
+		<span id="W_Tax_Fees" class="sheet_values"></span>
+	<hr id="remove7"/>
+	
+	 
+		<span>Gain Tax</span>
+		<span id="Gain_Tax" class="sheet_values"></span>
+	<hr id="remove8"/>
+	
+	 
+		<span>Advance Tax</span>
+		<span id="Advance_Tax" class="sheet_values"></span>
+	<hr id="remove9"/>
+	
+	 
+		<span>Macro Scanning Fees</span>
+		<span id="Macro_scanning_fees" class="sheet_values"></span>
+	<hr id="remove10"/>
+	
+	 
+		<span>Stamping Fees</span>
+		<span id="Stamping_fees" class="sheet_values"></span>
+	<hr id="remove11"/>
+	
+	 
+		<span>Documentation</span>
+		<span id="Documentation" class="sheet_values"></span>
+	<hr id="remove12"/>
+	
+	
+		<span id="UndertakingSpan">Undertaking</span>
+		<span id="Undertaking" class="sheet_values"></span>
+	<hr id="remove13"/>
+	
+	
+		<span id="AdvertisementSpan">Advertisement</span>
+		<span id="Advertisement" class="sheet_values"></span>
+		<hr / >
+	</div>
+	<div>	
+		<span id="total" class="sheet_values" ></span>
+		<label id ="total2" class="sheet_values">Total = &nbsp </label>
+		
+	</div>
+	
+	<button type="button" class="button" onclick="Print()">Print</button>
+	<button type="button" class="button2" onclick="Add()">Add</button>
+<script>
+	
+	
+	const Total= document.getElementById('total');	
+	Total.innerText =sessionStorage.getItem("Total");
+	update();
+	function update()
+	{
+	const DC_value = document.getElementById('DC_value');
+	DC_value.innerText = sessionStorage.getItem("DC_value");
+	
+	const Stamp_duty = document.getElementById('Stamp_duty');
+	Stamp_duty.innerText = sessionStorage.getItem("Stamp_duty");
+	
+	const Duplicate = document.getElementById('Duplicate');
+	Duplicate.innerText = sessionStorage.getItem("Duplicate");
+	
+	const Registration_Fees = document.getElementById('Registration_Fees');
+	Registration_Fees.innerText = sessionStorage.getItem("Registration_fees");
+	
+	const Town_Tax = document.getElementById('Town_Tax');
+	Town_Tax.innerText = sessionStorage.getItem("Town_tax");
+	
+	const  CVT = document.getElementById('CVT');
+	CVT.innerText = sessionStorage.getItem("CVT");
+	
+	const FBR_value = document.getElementById('FBR_value');
+	FBR_value.innerText = sessionStorage.getItem("FBR_value");
+
+	const  Difference_value = document.getElementById('Difference_value');
+	Difference_value.innerText = sessionStorage.getItem("Difference_value");	
+	
+	const  W_Tax_Fees= document.getElementById('W_Tax_Fees');
+	W_Tax_Fees.innerText = sessionStorage.getItem("W_tax_fees");
+
+	const Gain_tax = document.getElementById('Gain_Tax');
+	Gain_tax.innerText = sessionStorage.getItem("Gain_tax");
+
+	const  Advance_Tax = document.getElementById('Advance_Tax');
+	Advance_Tax.innerText = sessionStorage.getItem("Advance_tax");
+
+	const Macro_scanning_fees = document.getElementById('Macro_scanning_fees');
+	Macro_scanning_fees.innerText = sessionStorage.getItem("Macro_scanning_fees");
+
+	const Stamping_fees = document.getElementById('Stamping_fees');
+	Stamping_fees.innerText = sessionStorage.getItem("Stamping_fees");
+
+	const Documentation = document.getElementById('Documentation');
+	Documentation.innerText = sessionStorage.getItem("Documentation");
+	const Undertaking = document.getElementById('Undertaking');
+	if ( sessionStorage.getItem("Undertaking") != 0 ) 
+	{
+	Undertaking.innerText = sessionStorage.getItem("Undertaking");
+	}
+	else
+	{
+	 const UndertakingSpan = document.getElementById("UndertakingSpan").remove();
+	 const remove12 = document.getElementById("remove12").remove();
+	 Undertaking.remove();
+	}
+	const  Advertisement = document.getElementById('Advertisement');
+	
+	if ( sessionStorage.getItem("Advertisement") != 0 )
+	{
+	Advertisement.innerText = sessionStorage.getItem("Advertisement");
+	}
+	else
+	{
+	 const AdvertisementSpan = document.getElementById('AdvertisementSpan').remove();
+	 const remove13 = document.getElementById("remove13").remove();
+	 Advertisement.remove();
+	}
+	
+	
+	
+	const Area = document.getElementById('Area');	
+	Area.innerText = sessionStorage.getItem("Area");
+	
+	const Category = document.getElementById('Category');	
+	Category.innerText = sessionStorage.getItem("Category");
+	
+	const Category_type = document.getElementById('Category_type');	
+	Category_type.innerText = sessionStorage.getItem("Category_type");
+	
+	const Plot_type = document.getElementById('Plot_type');	
+	Plot_type.innerText = sessionStorage.getItem("Plot_type");
+
+	const Floor_type = document.getElementById('Floor_type');	
+	Floor_type.innerText = sessionStorage.getItem("Floor_type");
+	
+	const Heading = document.getElementById('heading');	
+	Heading.innerText += sessionStorage.getItem("Category_type") + "(" + sessionStorage.getItem("Category") +")";
+	}
+	function isNumber(n) {
+	return !isNaN(parseFloat(n)) && isFinite(n);
+	}
+
+
+	
+	function Print()
+	{
+	window.print();
+	}
+	 function createNode(element) {
+      return document.createElement(element);
+	  }
+	function Add()
+	{
+		const Report = document.getElementById('report');
+		var html ;
+		var value ;
+		var name  = prompt('Please Enter the name of new Field you want to add');
+		
+		if ( name == null || name =="")
+		{
+		}
+		else 
+		{
+		do {
+			value = prompt('Enter the value');
+			} while (isNaN(value) || value == null || value =="");
+
+		html = "<span>" + name +"</span><span class=\"sheet_values\">" + value +"</span><hr>";
+		
+		Report.innerHTML += html ; 
+		
+		const Total= document.getElementById('total');	
+	Total.innerText = parseFloat(Total.innerText) + parseFloat(value) ;
+		
+	
+		}
+
+
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,697 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel='stylesheet' type='text/css' href='style.css' />  
+	
+</head>
+<body>
+
+
+
+<div class="row">
+  <div class="side">
+	<p>
+		<label for="category">Category </label>
+		<select id="Category">			
+			<option value="A-1" selected>A-1</option>
+			<option value="I">I</option>
+			<option value="II">II</option>
+			<option value="III">III</option>
+			<option value="IV">IV</option>
+			<option value="V">V</option>
+			<option value="VI">VI</option>
+			<option value="VII">VII</option>
+			<option value="VIII">VIII</option>			
+		</select>
+		</p>
+		<hr style="margin-top:-0.9em"/>
+		<p>
+		<label for="category_type">Category Type </label>
+		<select id="Category_type">			
+			<option value="Flats" selected>Flats</option>
+			<option value="Residential">Residential</option>
+			<option value="Commercial">Commercial</option>
+		</select>
+		</p>
+		 	<hr style="margin-top:-0.9em"/>
+		<p>
+		<label for="plot_type">Plot Type </label>
+		<select id="Plot_type">			
+			<option value="Open" selected>Open</option>
+			<option value="Builtup">Builtup</option>
+		</select>
+		</p>	
+		 	<hr style="margin-top:-0.9em"/>
+		<p>
+		<label for="floor_type">Floor Type </label>
+		<select id="Floor_type">			
+			<option value="Ground" selected>Ground</option>
+			<option value="Ground_plus_one">Ground plus one</option>
+			<option value="Ground_plus_two">Ground plus two</option>
+			<option value="Ground_plus_three">Ground plus three</option>
+			<option value="Ground_plus_four">Ground plus four</option>
+		</select>
+		</p>	
+		 	<hr style="margin-top:-0.9em"/>
+		<p>
+		<label for="Area">Area (SQ. Yard / SQ. Ft.)</label>
+		<input type="text" id="Area" onkeypress='validate(event)' value=500>
+		</p>
+		 
+		<hr style="height:3px;border:none;color:#333;background-color:#333;" >
+		<p>
+		<label for="Duplicate">Duplicate</label>
+		<input type="text" id="Duplicate" onkeypress='validate(event)' value=500>
+		</p>
+		 	<hr style="margin-top:-0.9em"/>
+		<p>
+		<label for="Macro_scanning_fees">Macro Scanning Fees</label>
+		<input type="text" id="Macro_scanning_fees" onkeypress='validate(event)' value=1500>
+		</p>
+		 	<hr style="margin-top:-0.9em"/>
+		<p>
+		<label for="Stamping_fees">Stamping Fees</label>
+		<input type="text" id="Stamping_fees" onkeypress='validate(event)' value=1000>
+		</p>
+		 	<hr style="margin-top:-0.9em"/>
+		<p>
+		<label for="Documentation">Documentation</label>
+		<input type="text" id="Documentation" onkeypress='validate(event)' value=1000>
+		</p> 
+		 	<hr style="margin-top:-0.9em"/>
+		<p>
+		<label for="Undertaking">Undertaking</label>
+		<input type="text" id="Undertaking" onkeypress='validate(event)' value=0>
+		</p>
+		 	<hr style="margin-top:-0.9em"/>
+		<p>
+		<label for="Advertisement">Advertisement</label>
+		<input type="text" id="Advertisement" onkeypress='validate(event)' value=0>
+		</p>  
+		
+		<hr style="height:3px;border:none;color:#333;background-color:#333;" >
+		
+		<p>
+		<label> CVT Percentage</label>
+		<input type="number" id="CVT_Percentage"  onkeypress='validate(event)' min="0" value=2>
+		</p>
+			<hr style="margin-top:-0.9em"/>
+		<p>
+		<label>FBR Rate Custom Value </label>
+		<input type="text" id="FBR_rate_custome_value"  onkeypress='validate(event)' value=0>
+		</p>
+			<hr style="margin-top:-0.9em"/>
+		<p>
+		<label>Gain Tax Percentage</label>
+		<input type="number" id="Gain_tax_percentage" onkeypress='validate(event)' min="0" value=4>
+		</p>
+			<hr style="margin-top:-0.9em"/>
+		<p>
+		<label>Advance Tax Percentage</label>
+		<input type="number" id="Advance_tax_percentage" onkeypress='validate(event)' min="0" value=4>
+		</p>
+		
+		<p>
+		<label>Custom Registration Fees </label>
+		<input type="text" id="Custom_registration_fees" onkeypress='validate(event)' min="0" value=0>
+		</p>
+  </div>
+  <div class="main">
+	 <p>
+		<label for="Category_rate">Category Rate</label>
+		<input type="text" id="Category_rate" readonly>
+		</p>
+		 <hr>
+		<p>
+		<label for="Category_rate_with_floor_type">Category Rate (with Floor Type)</label>
+		<input type="text" id="Category_rate_with_floor_type" readonly>
+		</p>
+		 <hr>
+		<p>
+		<label for="DC_value">DC Value</label>
+		<input type="text" id="DC_value" readonly>
+		</p>
+		 <hr>
+		<p>
+		<label for="Stamp_duty">Stamp Duty</label>
+		<input type="text" id="Stamp_duty" readonly>
+		</p>
+		 <hr>
+		
+		<p>
+		<label for="Registration_fees">Registration Fees</label>
+		<input type="text" id="Registration_fees" readonly>
+		</p>
+		<hr> 
+		<p>
+		<label for="Town_tax">Town Tax</label>
+		<input type="text" id="Town_tax" readonly>
+		</p>
+		 <hr>
+		
+		
+		<p>
+		<label for="CVT">CVT</label>
+		<input type="text" id="CVT" readonly>
+		
+		</p>
+		 <hr>
+		<p>
+		<label for="FBR_rate">FBR Rate</label>
+		<input type="text" id="FBR_rate" readonly>
+		</p>
+		 <hr>
+		
+		<p>
+		<label for="FBR_rate_with_floor_type">FBR Rate (with Floor Type)</label>
+		<input type="text" id="FBR_rate_with_floor_type" readonly>
+		<hr>
+		
+		</p>
+		 
+		<p>
+		<label for="FBR_value">FBR Value</label>
+		<input type="text" id="FBR_value" readonly>
+		</p>
+		<hr> 
+		<p>	
+		<label for="Difference_value">Difference Value</label>
+		<input type="text" id="Difference_value" readonly>
+		</p>
+		<hr> 
+		<p>
+		<label for="W_tax_fees">W Tax Fees</label>
+		<input type="text" id="W_tax_fees" readonly>
+		</p>
+		<hr> 
+		
+		<p>
+		<label for="Gain_tax">Gain Tax</label>
+		<input type="text" id="Gain_tax" readonly>
+				
+		</p>
+		<hr>
+		
+		<p>
+		<label for="Advance_tax">Advance Tax</label>
+		<input type="text" id="Advance_tax" readonly>
+		</p>
+		 <hr>
+		<p>
+		<label >Total</label>
+		<input type="text" id="Total" readonly>
+		</p>
+		<hr> 
+		<p>
+		<button type="button" class="button" onclick="Calculate()"> Calculate</button>
+		<a href="print.html"><button type="button" class="button2" 	onclick="Print()">Print</button></a>		
+		</p>
+  </div>
+  
+  
+  </div>
+  <hr style="height:3px;border:none;color:#333;background-color:#333;" >
+  <div id ="table">
+  <h3>FBR table </h3>
+  <table id="FBR" >
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Residential Open</th>
+                <th>Residential Builtup</th>
+                <th>Commercial Open</th>
+                <th>Commercial Builtup</th>
+                <th>Industrial Open</th>
+				<th>Industrial Builtup</th>
+				<th>Flats</th>
+            </tr>
+        </thead>
+        <tbody>
+		
+		   <tr>
+                <td>A-1</td>
+                <td>35000</td>
+                <td>40000</td>
+                <td>100000</td>
+                <td>67500</td>
+                <td>0</td>
+				<td>0</td>
+				<td>5000</td>
+            </tr>
+            		
+		   <tr>
+                <td>I</td>
+                <td>25000</td>
+                <td>32000</td>
+                <td>75000</td>
+                <td>54000</td>
+                <td>12000</td>
+				<td>3000</td>
+				<td>4500</td>
+            </tr>
+
+			<tr>
+                <td>II</td>
+                <td>12000</td>
+                <td>20000</td>
+                <td>60000</td>
+                <td>35000</td>
+                <td>8000</td>
+				<td>3000</td>
+				<td>2500</td>
+            </tr>
+			
+			<tr>
+                <td>III</td>
+                <td>6000</td>
+                <td>11000</td>
+                <td>25000</td>
+                <td>18000</td>
+                <td>0</td>
+				<td>0</td>
+				<td>1500</td>
+            </tr>
+			
+			<tr>
+                <td>IV</td>
+                <td>5000</td>
+                <td>6000</td>
+                <td>19000</td>
+                <td>10000</td>
+                <td>0</td>
+				<td>0</td>
+				<td>1000</td>
+            </tr>
+			
+			<tr>
+                <td>V</td>
+                <td>1800</td>
+                <td>4000</td>
+                <td>4000</td>
+                <td>6300</td>
+                <td>0</td>
+				<td>0</td>
+				<td>600</td>
+            </tr>
+			
+			<tr>
+                <td>VI</td>
+                <td>900</td>
+                <td>3000</td>
+                <td>2000</td>
+                <td>4500</td>
+                <td>0</td>
+				<td>0</td>
+				<td>300</td>
+            </tr>
+			
+			<tr>
+                <td>VII</td>
+                <td>20000</td>
+                <td>28000</td>
+                <td>70000</td>
+                <td>40000</td>
+                <td>0</td>
+				<td>0</td>
+				<td>5000</td>
+            </tr>
+			
+			<tr>
+                <td>VIII</td>
+                <td>6000</td>
+                <td>11000</td>
+                <td>25000</td>
+                <td>18000</td>
+                <td>0</td>
+				<td>0</td>
+				<td>1500</td>
+            </tr>
+			
+        </tbody>
+		
+      
+    </table>
+	</div>
+	 <div id ="table">
+  <h3>DC table </h3>
+	<table id="DC" >
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Residential Open</th>
+                <th>Residential Builtup</th>
+                <th>Commercial Open</th>
+                <th>Commercial Builtup</th>
+                <th>Industrial Open</th>
+				<th>Industrial Builtup</th>
+				<th>Flats</th>
+            </tr>
+        </thead>
+        <tbody>
+		
+		   <tr>
+                <td>A-1</td>
+                <td>17820</td>
+                <td>27720</td>
+                <td>41400</td>
+                <td>49680</td>
+                <td>0</td>
+				<td>0</td>
+				<td>2970</td>
+            </tr>
+            		
+		   <tr>
+                <td>I</td>
+                <td>11550</td>
+                <td>14850</td>
+                <td>25876</td>
+                <td>34500</td>
+                <td>2640</td>
+				<td>464</td>
+				<td>2146</td>
+            </tr>
+
+			<tr>
+                <td>II</td>
+                <td>6600</td>
+                <td>9240</td>
+                <td>12420</td>
+                <td>17940</td>
+                <td>1320</td>
+				<td>464</td>
+				<td>1188</td>
+            </tr>
+			
+			<tr>
+                <td>III</td>
+                <td>2970</td>
+                <td>3960</td>
+                <td>6210</td>
+                <td>8280</td>
+                <td>0</td>
+				<td>0</td>
+				<td>594</td>
+            </tr>
+			
+			<tr>
+                <td>IV</td>
+                <td>1980</td>
+                <td>2970</td>
+                <td>3312</td>
+                <td>5590</td>
+                <td>0</td>
+				<td>0</td>
+				<td>496</td>
+            </tr>
+			
+			<tr>
+                <td>V</td>
+                <td>1188</td>
+                <td>1980</td>
+                <td>2070</td>
+                <td>3726</td>
+                <td>0</td>
+				<td>0</td>
+				<td>298</td>
+            </tr>
+			
+			<tr>
+                <td>VI</td>
+                <td>594</td>
+                <td>1386</td>
+                <td>1036</td>
+                <td>2484</td>
+                <td>0</td>
+				<td>0</td>
+				<td>150</td>
+            </tr>
+			
+			<tr>
+                <td>VII</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+				<td>0</td>
+				<td>0</td>
+            </tr>
+			
+			<tr>
+                <td>VIII</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+				<td>0</td>
+				<td>0</td>
+            </tr>
+			
+        </tbody>
+		
+      
+    </table>
+	
+	</div>
+	<script>
+		var row_number;
+		var floor_number;
+		function Calculate()
+		{
+			const category = document.getElementById('Category');
+			row_number = category.selectedIndex + 1;
+			
+			const floor_type = document.getElementById('Floor_type');
+			floor_number = floor_type.selectedIndex + 1 ;
+			
+			
+			//calculating Category_rate
+			
+			const Category_rate = document.getElementById('Category_rate');
+			const Category_type = document.getElementById('Category_type');
+			const Plot_type = document.getElementById('Plot_type');
+			const DC_table = document.getElementById('DC');
+			
+			if ( Category_type.options[Category_type.selectedIndex].value == "Residential" && Plot_type.options[Plot_type.selectedIndex].value == "Open"  )
+				Category_rate.value = DC_table.rows[row_number].cells[1].innerText;
+			else if ( Category_type.options[Category_type.selectedIndex].value == "Residential" && Plot_type.options[Plot_type.selectedIndex].value == "Builtup"  )
+				Category_rate.value = DC_table.rows[row_number].cells[2].innerText;
+			else if ( Category_type.options[Category_type.selectedIndex].value == "Commercial" && Plot_type.options[Plot_type.selectedIndex].value == "Open"  )
+				Category_rate.value = DC_table.rows[row_number].cells[3].innerText;
+			else if ( Category_type.options[Category_type.selectedIndex].value == "Commercial" && Plot_type.options[Plot_type.selectedIndex].value == "Builtup"  )
+				Category_rate.value = DC_table.rows[row_number].cells[4].innerText;
+			else if ( Category_type.options[Category_type.selectedIndex].value == "Flats" )
+				Category_rate.value = DC_table.rows[row_number].cells[7].innerText;
+		//	prompt(floor_number,"hi");
+			
+			//calculating Category_rate_with_floor_type
+			
+			const Category_rate_with_floor_type = document.getElementById('Category_rate_with_floor_type');
+			
+			if ( Category_type.options[Category_type.selectedIndex].value == "Flats" )
+				Category_rate_with_floor_type.value = Category_rate.value ;
+			else if ( Category_type.options[Category_type.selectedIndex].value == "Residential")
+				Category_rate_with_floor_type.value =parseFloat(Category_rate.value)  + ( ((floor_number-1)* parseFloat(Category_rate.value))/4);
+			else if ( Category_type.options[Category_type.selectedIndex].value == "Commercial")
+				Category_rate_with_floor_type.value =parseFloat(Category_rate.value)  + ( (floor_number-1)* parseFloat(Category_rate.value));	
+				
+			//calculating DC_value
+			const DC_value = document.getElementById('DC_value');
+			const Area = document.getElementById('Area');
+			
+			DC_value.value = parseFloat(Category_rate_with_floor_type.value) * parseFloat(Area.value) ;
+			
+			//calculating Stamp_duty
+			const Stamp_duty = document.getElementById('Stamp_duty');
+			
+			Stamp_duty.value = (parseFloat(DC_value.value)/100 ) *2 ;
+			
+			//calculating Registration_fees
+			const Registration_fees = document.getElementById('Registration_fees');
+			const Custom_registration_fees = document.getElementById('Custom_registration_fees');
+			Registration_fees.value = ((parseFloat(DC_value.value)/100 ) *1) + parseFloat(Custom_registration_fees.value) ;
+			
+			//calculating Town_tax
+			const Town_tax = document.getElementById('Town_tax');
+			Town_tax.value = (parseFloat(DC_value.value)/100 ) ;
+			
+			//calculating CVT 
+			const CVT = document.getElementById('CVT');
+			const CVT_Percentage = document.getElementById('CVT_Percentage');
+			CVT.value = (parseFloat(DC_value.value)/100) * (parseFloat(CVT_Percentage.value));
+			
+			//calculating FBR
+			const FBR_rate = document.getElementById('FBR_rate');
+			const FBR_Table = document.getElementById('FBR');
+			
+			if ( Category_type.options[Category_type.selectedIndex].value == "Residential" && Plot_type.options[Plot_type.selectedIndex].value == "Open"  )
+				FBR_rate.value = FBR_Table.rows[row_number].cells[1].innerText;
+			else if ( Category_type.options[Category_type.selectedIndex].value == "Residential" && Plot_type.options[Plot_type.selectedIndex].value == "Builtup"  )
+				FBR_rate.value = FBR_Table.rows[row_number].cells[2].innerText;
+			else if ( Category_type.options[Category_type.selectedIndex].value == "Commercial" && Plot_type.options[Plot_type.selectedIndex].value == "Open"  )
+				FBR_rate.value = FBR_Table.rows[row_number].cells[3].innerText;
+			else if ( Category_type.options[Category_type.selectedIndex].value == "Commercial" && Plot_type.options[Plot_type.selectedIndex].value == "Builtup"  )
+				FBR_rate.value = FBR_Table.rows[row_number].cells[4].innerText;
+			else if ( Category_type.options[Category_type.selectedIndex].value == "Flats" )
+				FBR_rate.value = FBR_Table.rows[row_number].cells[7].innerText;
+				
+			//calculating FBR_rate_with_floor_type
+			
+			const FBR_rate_with_floor_type = document.getElementById('FBR_rate_with_floor_type');
+			
+			if ( Category_type.options[Category_type.selectedIndex].value == "Flats" )
+				FBR_rate_with_floor_type.value = FBR_rate.value ;
+			else if ( Category_type.options[Category_type.selectedIndex].value == "Residential")
+				FBR_rate_with_floor_type.value =parseFloat(FBR_rate.value)  + ( ((floor_number-1)* parseFloat(FBR_rate.value))/4);
+			else if ( Category_type.options[Category_type.selectedIndex].value == "Commercial")
+				FBR_rate_with_floor_type.value =(parseFloat(FBR_rate.value) * floor_number);
+			
+			//calculating FBR_value
+			
+			const FBR_value = document.getElementById('FBR_value');
+			const FBR_rate_custome_value = document.getElementById('FBR_rate_custome_value');
+			if ( FBR_rate_custome_value.value > 0 ) 
+				FBR_value.value = parseFloat( FBR_rate_custome_value.value ) * parseFloat(Area.value);
+			else
+				FBR_value.value = parseFloat(FBR_rate_with_floor_type.value) * parseFloat(Area.value);
+				
+			//calculating Difference_value
+			
+			const Difference_value = document.getElementById('Difference_value');
+			
+			Difference_value.value = parseFloat(FBR_value.value) - parseFloat(DC_value.value) ;
+			
+			//calculating W_tax_fees 
+			const W_tax_fees = document.getElementById('W_tax_fees');
+			W_tax_fees.value = (parseFloat(Difference_value.value)/100)*3 ; 
+			
+			//calculating Gain_tax 
+			const Gain_tax = document.getElementById('Gain_tax');
+			const Gain_tax_percentage = document.getElementById('Gain_tax_percentage');
+			
+			Gain_tax.value = (parseFloat(FBR_value.value) / 100) * (parseFloat(Gain_tax_percentage.value)); 
+			
+			//calculating Advance_tax
+			const Advance_tax = document.getElementById('Advance_tax');
+			const Advance_tax_percentage = document.getElementById('Advance_tax_percentage');
+			
+			Advance_tax.value = (parseFloat(FBR_value.value)/100) * (parseFloat(Advance_tax_percentage.value));
+			
+			//calculating Total
+			
+			const Total = document.getElementById('Total');
+			
+			Total.value = parseFloat(Stamp_duty.value) + parseFloat(Duplicate.value) + parseFloat(Registration_fees.value) + parseFloat(Town_tax.value) + parseFloat(CVT.value) + parseFloat(W_tax_fees.value) + parseFloat(Gain_tax.value) + parseFloat(Advance_tax.value) + parseFloat(Macro_scanning_fees.value) + parseFloat(Stamping_fees.value) + parseFloat(Documentation.value) + parseFloat(Undertaking.value) + parseFloat(Advertisement.value) ;
+			
+		}
+		//restricts the input field to accept just numbers 
+		function validate(evt) {
+			var theEvent = evt || window.event;
+
+		// Handle paste
+				if (theEvent.type === 'paste') {
+			key = event.clipboardData.getData('text/plain');
+		} else {
+			// Handle key press
+			var key = theEvent.keyCode || theEvent.which;
+				key = String.fromCharCode(key);
+		}
+			var regex = /[0-9]|\./;
+			if( !regex.test(key) ) {
+			theEvent.returnValue = false;
+			if(theEvent.preventDefault) theEvent.preventDefault();
+		}
+        }
+        
+		function Print()
+		{
+		Calculate();
+		 const DC_value = document.getElementById('DC_value');
+		 sessionStorage.setItem("DC_value", DC_value.value);
+		 
+		 const Stamp_duty = document.getElementById('Stamp_duty');
+		 sessionStorage.setItem("Stamp_duty", Stamp_duty.value);
+		 
+		 const Duplicate = document.getElementById('Duplicate');
+		 sessionStorage.setItem("Duplicate", Duplicate.value);
+		 
+         const Registration_fees = document.getElementById('Registration_fees');
+		 sessionStorage.setItem("Registration_fees", Registration_fees.value);
+		 
+		 const Town_tax = document.getElementById('Town_tax');
+		 sessionStorage.setItem("Town_tax", Town_tax.value);
+		 
+		 const CVT= document.getElementById('CVT');
+		 sessionStorage.setItem("CVT", CVT.value);
+		 
+		 const FBR_value = document.getElementById('FBR_value');
+		 sessionStorage.setItem("FBR_value", FBR_value.value);
+		 
+		 const Difference_value = document.getElementById('Difference_value');
+		 sessionStorage.setItem("Difference_value", Difference_value.value);
+		 
+		 const W_tax_fees = document.getElementById('W_tax_fees');
+		 sessionStorage.setItem("W_tax_fees", W_tax_fees.value);
+		 
+		 const Gain_tax = document.getElementById('Gain_tax');
+		 sessionStorage.setItem("Gain_tax", Gain_tax.value);
+		 
+		 const Advance_tax = document.getElementById('Advance_tax');
+		 sessionStorage.setItem("Advance_tax", Advance_tax.value);
+		 
+		 const Macro_scanning_fees = document.getElementById('Macro_scanning_fees');
+		 sessionStorage.setItem("Macro_scanning_fees", Macro_scanning_fees.value);
+		 
+		 const Stamping_fees = document.getElementById('Stamping_fees');
+		 sessionStorage.setItem("Stamping_fees", Stamping_fees.value);
+		 
+		 const Documentation = document.getElementById('Documentation');
+		 sessionStorage.setItem("Documentation",Documentation.value);
+		 
+		 const Undertaking = document.getElementById('Undertaking');
+		 sessionStorage.setItem("Undertaking", Undertaking.value);
+		 
+		 const Advertisement = document.getElementById('Advertisement');
+		 sessionStorage.setItem("Advertisement", Advertisement.value);
+		 
+		 const Total = document.getElementById('Total');
+		 sessionStorage.setItem("Total", Total.value);
+		 
+		 const Area = document.getElementById('Area');
+		 sessionStorage.setItem("Area", Area.value);
+		  
+		 const Category = document.getElementById('Category');
+		 sessionStorage.setItem("Category", Category.options[Category.selectedIndex].value);
+
+		 const Category_type = document.getElementById('Category_type');
+		 sessionStorage.setItem("Category_type", Category_type.options[Category_type.selectedIndex].value);
+		 
+		 const Plot_type = document.getElementById('Plot_type');
+		 sessionStorage.setItem("Plot_type", Plot_type.options[Plot_type.selectedIndex].value);
+		 
+		 const Floor_type= document.getElementById('Floor_type');
+		 sessionStorage.setItem("Floor_type", Floor_type.options[Floor_type.selectedIndex].value);
+		 
+		 
+		 
+		 //Category_type.options[Category_type.selectedIndex].value
+		}
+		
+		
+		
+		<!--sessionStorage.setItem("key", "value"); var lastname = sessionStorage.getItem("key");-->
+		</script>
+		
+					
+
+
+
+
+</body>
+</html>
